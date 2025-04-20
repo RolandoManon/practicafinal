@@ -3,7 +3,7 @@ name: CI Workflow
 on:
   push:
     branches:
-      - main  # O la rama que prefieras
+      - main
 
 jobs:
   build:
@@ -20,6 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./hola\ mundo\ web  # Especificar el directorio
 
       - name: Run tests
         run: npm test
+        working-directory: ./hola\ mundo\ web  # Especificar el directorio
