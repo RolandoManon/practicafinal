@@ -2,23 +2,25 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     defaults:
       run:
-        working-directory: ./hola mundo web  # <--- Esta línea es clave
+        working-directory: "./hola mundo web"
 
     steps:
-      - name: Checkout del repositorio
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Instalar dependencias
-        run: npm install
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-      - name: Ejecutar pruebas
-        run: npm test
+      - run: npm install
+      - run: npm test
