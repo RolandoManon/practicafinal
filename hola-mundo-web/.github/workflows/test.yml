@@ -12,15 +12,18 @@ jobs:
 
     defaults:
       run:
-        working-directory: "./hola mundo web"
+        working-directory: hola-mundo-web
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      - run: npm install
-      - run: npm test
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas
+        run: npm test
