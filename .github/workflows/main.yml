@@ -4,24 +4,34 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out the code
+      - name: Checkout del repositorio
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Verificar contenido del repositorio
+        run: ls -la
+
+      - name: Verificar contenido de la carpeta con el proyecto
+        run: ls -la
+        working-directory: "./hola mundo web"
+
+      - name: Configurar Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      - name: Install dependencies
+      - name: Instalar dependencias
         run: npm install
-        working-directory: ./hola\ mundo\ web  # Especificar el directorio
+        working-directory: "./hola mundo web"
 
-      - name: Run tests
+      - name: Ejecutar tests
         run: npm test
-        working-directory: ./hola\ mundo\ web  # Especificar el directorio
+        working-directory: "./hola mundo web"
