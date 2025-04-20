@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: hola-mundo-web
+        working-directory: ./hola-mundo-web
 
     steps:
       - uses: actions/checkout@v3
