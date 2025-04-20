@@ -1,0 +1,26 @@
+# Ignorar archivos de sistema y configuración
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+
+# Ignorar directorios comunes
+.vscode/
+.idea/
+node_modules/
+*.env
+.gitconfig
+.cache/
+.conda/
+.docker/
+.vagrant.d/
+OneDrive/
+# Ignorar archivos y directorios personales
+.bash_history
+.cache/
+.conda/
+.docker/
+.gitconfig
+OneDrive/
+AppData/
+Desktop/
